@@ -22,12 +22,19 @@ def run():
     # The text to translate
     print(transcription)
 
-    driver = webdriver.Chrome("C:/chromedriver.exe")
-    transcription.replace(" ", "+")
-    driver.get("https://www.youtube.com/results?search_query=" + transcription)
+    if transcription[0:7] == "YouTube":
+      driver = webdriver.Chrome("C:/chromedriver.exe")
+      search = transcription[8:]
+      search.replace(" ", "+")
+      driver.get("https://www.youtube.com/results?search_query=" + search)
+      driver.implicitly_wait(4) 
+    #  element = driver.find_element_by_xpath("//div[@class='yt-thumb video-thumb yt-uix-mouseover-img-wrap']")
+      element = driver.find_element_by_class_name('ytd-video-renderer')
+      element.click()
+      #$('[class="yt-thumb video-thumb yt-uix-mouseover-img-wrap"]').click()
+      while 1==1:
+        pass
 
-    while 1==1:
-      pass
     # The target language
     lang = detect_language(transcription)
     print(lang)
