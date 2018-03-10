@@ -25,7 +25,6 @@ try:
   text = r.recognize_google(audio)
   # The text to translate
   print(text)
-  # system('say -v Victoria ' + r.recognize_google(audio))
 
   # The target language
   target = 'ja'
@@ -48,7 +47,8 @@ try:
   # print(u'Translation: {}'.format(translation['translatedText']))
 
 except sr.UnknownValueError:
-  print("Google Speech Recognition could not understand audio")
+  # print("Google Speech Recognition could not understand audio")
+  system('say -v Victoria ' + "Google Speech Recognition could not understand audio")
 except sr.RequestError as e:
-  print(
-    "Could not request results from Google Speech Recognition service; {0}".format(e))
+  # print("Could not request results from Google Speech Recognition service; {0}".format(e))
+  system('say -v Victoria ' + "Could not request results from Google Speech Recognition service")
