@@ -12,19 +12,11 @@ def run():
   # Instantiates a client
   translate_client = translate.Client()
 
-  # obtain audio from the microphone
-  r = sr.Recognizer()
-  with sr.Microphone() as source:
-    r.adjust_for_ambient_noise(source)
-    print("Say something!")
-    audio = r.listen(source)
-
-  # recognize speech using Google Speech Recognition
   try:
     # for testing purposes, we're just using the default API key
     # to use another API key, use `r.recognize_google(audio, key="GOOGLE_SPEECH_RECOGNITION_API_KEY")`
     # instead of `r.recognize_google(audio)`
-    transcription = r.recognize_google(audio)
+    transcription = set_up_mic()
     # The text to translate
     print(transcription)
 
@@ -65,5 +57,16 @@ def detect_language(text):
   # will return a sequence of results for each text.
   language = translate_client.detect_language(text)
   return language
+
+# obtain audio from the microphone
+def set_up_mic():
+  r = sr.Recognizer()
+  with sr.Microphone() as source:
+    r.adjust_for_ambient_noise(source)
+    print("Say something!")
+    audio = r.listen(source)
+
+  # recognize speech using Google Speech Recognition
+  return r.recognize_google(audio)
 
 run()
