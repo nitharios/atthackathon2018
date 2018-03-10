@@ -63,3 +63,5 @@ target/
 
 #configuration
 config.*
+*.json
+legacy/
