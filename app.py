@@ -34,6 +34,15 @@ def run():
       #$('[class="yt-thumb video-thumb yt-uix-mouseover-img-wrap"]').click()
       while 1==1:
         pass
+    
+    if transcription[0:6] == "Google": 
+      driver = webdriver.Chrome("C:/chromedriver.exe")
+      search = transcription[7:]
+      search.replace(" ", "+")
+      driver.get("https://www.google.com/search?q=" + search)
+      driver.implicitly_wait(4)
+      while 1==1:
+        pass
 
     # The target language
     lang = detect_language(transcription)
