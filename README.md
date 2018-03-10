@@ -9,11 +9,11 @@ To build something for the Internet of Things!
 
 ### Hardware
 
-- Google Speech Translator
 - Raspberry Pi 2
 
 ### Software
 
+- Google Speech Translator
 - Linux
 - NOOBS/Raspian
 - Python
