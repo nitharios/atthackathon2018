@@ -9,7 +9,7 @@ To build something for the Internet of Things!
 
 ### Hardware
 
-- Microsoft Speech Translator
+- Google Speech Translator
 - Raspberry Pi 2
 
 ### Software
