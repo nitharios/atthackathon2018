@@ -1,5 +1,5 @@
 # Lunavelle
-Submission for (Honolulu AT&amp;T Hackathon 2018)[https://www.eventbrite.com/e/att-hackathon-hawaii-tickets-42514992487]
+Submission for [Honolulu AT&amp;T Hackathon 2018](https://www.eventbrite.com/e/att-hackathon-hawaii-tickets-42514992487)
 
 ## Purpose
 
@@ -20,10 +20,10 @@ To build something for the Internet of Things!
 
 ## Resources
 
-(Microsoft Speech Translator)[https://www.microsoft.com/en-us/translator/speech.aspx]
+[Microsoft Speech Translator](https://www.microsoft.com/en-us/translator/speech.aspx)
 
-(MST for Python)[https://github.com/MicrosoftTranslator/Python-Speech-Translate]
+[MST for Python](https://github.com/MicrosoftTranslator/Python-Speech-Translate)
 
-(Raspberry Pi 2 Tutorial)[https://www.youtube.com/watch?v=RpseX2ylEuw&list=PLQVvvaa0QuDesV8WWHLLXW_avmTzHmJLv]
+[Raspberry Pi 2 Tutorial](https://www.youtube.com/watch?v=RpseX2ylEuw&list=PLQVvvaa0QuDesV8WWHLLXW_avmTzHmJLv)
 
-(Virtual Environment & Server Setup)[https://github.com/nitharios/simple-flask-app]
+[Virtual Environment & Server Setup](https://github.com/nitharios/simple-flask-app)
