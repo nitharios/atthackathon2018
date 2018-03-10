@@ -1,5 +1,7 @@
 # NOTE: this example requires PyAudio because it uses the Microphone class
 from voices import VOICES
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
 
 # Imports the Google Cloud client library
 from os import system
@@ -20,10 +22,16 @@ def run():
     # The text to translate
     print(transcription)
 
+    driver = webdriver.Chrome("C:/chromedriver.exe")
+    transcription.replace(" ", "+")
+    driver.get("https://www.youtube.com/results?search_query=" + transcription)
+
+    while 1==1:
+      pass
     # The target language
     lang = detect_language(transcription)
     print(lang)
-    target = 'ja'
+    target = 'es'
 
     # Translates text
     translation = translate_client.translate(
@@ -40,7 +48,7 @@ def run():
     engine.say(voiceTranslation)
     engine.runAndWait()
     # print(u'Text: {}'.format(text))
-    # print(u'Translation: {}'.format(translation['translatedText']))
+    #print(u'Translation: {}'.format(translation['translatedText']))
 
   except sr.UnknownValueError:
     # print("Google Speech Recognition could not understand audio")
