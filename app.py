@@ -1,4 +1,5 @@
 # NOTE: this example requires PyAudio because it uses the Microphone class
+from voices import VOICES
 
 # Imports the Google Cloud client library
 from os import system
