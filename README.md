@@ -26,4 +26,6 @@ To build something for the Internet of Things!
 
 [Raspberry Pi 2 Tutorial](https://www.youtube.com/watch?v=RpseX2ylEuw&list=PLQVvvaa0QuDesV8WWHLLXW_avmTzHmJLv)
 
+[Speech Recognition](https://github.com/Uberi/speech_recognition)
+
 [Virtual Environment & Server Setup](https://github.com/nitharios/simple-flask-app)
