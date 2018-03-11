@@ -38,11 +38,30 @@ def run():
     if transcription[0:6] == "Google": 
       driver = webdriver.Chrome("C:/chromedriver.exe")
       search = transcription[7:]
-      search.replace(" ", "+")
-      driver.get("https://www.google.com/search?q=" + search)
+      #for Google we want to translate our results
+      # The target language
+      lang = detect_language(search)
+      print(lang)
+      target = 'en'
+      # Translates text
+      translation = translate_client.translate(
+        search,
+        target_language=target)
+      translatedString = str(format(translation['translatedText'])).replace(" ", "+")
+      driver.get("https://www.google.com/search?q=" + translatedString)
       driver.implicitly_wait(4)
       while 1==1:
         pass
+
+    if transcription[0:6] == "Reddit": 
+      driver = webdriver.Chrome("C:/chromedriver.exe")
+      search = transcription[7:]
+      search.replace(" ", "+")
+      driver.get("https://www.reddit.com/search?q=" + search + "&sort=relevance&t=all")
+      driver.implicitly_wait(4) 
+      while 1==1:
+        pass
+    
 
     # The target language
     lang = detect_language(transcription)
