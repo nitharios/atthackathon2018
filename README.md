@@ -3,7 +3,9 @@ Submission for [Honolulu AT&amp;T Hackathon 2018](https://www.eventbrite.com/e/a
 
 ## Purpose
 
-To build something for the Internet of Things!
+Lunavelle is an assistant who can translate speech to speech in real time with language detection. You can also use Lunavelle to search things on the internet such as Googling things, looking up a video on youtube, and going on Reddit.
+
+Luna is able to work on iOS, Windows, and Linux.
 
 ## Technology
 
