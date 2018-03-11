@@ -22,7 +22,7 @@ def run():
     # The text to translate
     print(transcription)
 
-    driver = webdriver.Chrome("C:/chromedriver.exe")
+    driver = webdriver.Chrome("/Users/nniosco/Documents/chromedriver")
     transcription.replace(" ", "+")
     driver.get("https://www.youtube.com/results?search_query=" + transcription)
 
