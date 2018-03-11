@@ -36,7 +36,7 @@ def run():
         pass
     
     if transcription[0:6] == "Google": 
-      driver = webdriver.Chrome("C:/chromedriver.exe")
+      driver = webdriver.Chrome("/Users/nniosco/chromedriver")
       search = transcription[7:]
       #for Google we want to translate our results
       # The target language
@@ -54,7 +54,7 @@ def run():
         pass
 
     if transcription[0:6] == "Reddit": 
-      driver = webdriver.Chrome("C:/chromedriver.exe")
+      driver = webdriver.Chrome("/Users/nniosco/chromedriver")
       search = transcription[7:]
       search.replace(" ", "+")
       driver.get("https://www.reddit.com/search?q=" + search + "&sort=relevance&t=all")
