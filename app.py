@@ -1,5 +1,7 @@
 # NOTE: this example requires PyAudio because it uses the Microphone class
 from voices import VOICES
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
 
 # Imports the Google Cloud client library
 from os import system
@@ -20,10 +22,50 @@ def run():
     # The text to translate
     print(transcription)
 
+    if transcription[0:7] == "YouTube":
+      driver = webdriver.Chrome("/Users/nniosco/chromedriver")
+      search = transcription[8:]
+      search.replace(" ", "+")
+      driver.get("https://www.youtube.com/results?search_query=" + search)
+      driver.implicitly_wait(4) 
+    #  element = driver.find_element_by_xpath("//div[@class='yt-thumb video-thumb yt-uix-mouseover-img-wrap']")
+      element = driver.find_element_by_class_name('ytd-video-renderer')
+      element.click()
+      #$('[class="yt-thumb video-thumb yt-uix-mouseover-img-wrap"]').click()
+      while 1==1:
+        pass
+    
+    if transcription[0:6] == "Google": 
+      driver = webdriver.Chrome("/Users/nniosco/chromedriver")
+      search = transcription[7:]
+      #for Google we want to translate our results
+      # The target language
+      lang = detect_language(search)
+      print(lang)
+      target = 'en'
+      # Translates text
+      translation = translate_client.translate(
+        search,
+        target_language=target)
+      translatedString = str(format(translation['translatedText'])).replace(" ", "+")
+      driver.get("https://www.google.com/search?q=" + translatedString)
+      driver.implicitly_wait(4)
+      while 1==1:
+        pass
+
+    if transcription[0:6] == "Reddit": 
+      driver = webdriver.Chrome("/Users/nniosco/chromedriver")
+      search = transcription[7:]
+      search.replace(" ", "+")
+      driver.get("https://www.reddit.com/search?q=" + search + "&sort=relevance&t=all")
+      driver.implicitly_wait(4) 
+      while 1==1:
+        pass
+    
     # The target language
     lang = detect_language(transcription)
     print(lang)
-    target = 'ja'
+    target = 'es'
 
     # Translates text
     translation = translate_client.translate(
@@ -40,7 +82,7 @@ def run():
     engine.say(voiceTranslation)
     engine.runAndWait()
     # print(u'Text: {}'.format(text))
-    # print(u'Translation: {}'.format(translation['translatedText']))
+    #print(u'Translation: {}'.format(translation['translatedText']))
 
   except sr.UnknownValueError:
     # print("Google Speech Recognition could not understand audio")
